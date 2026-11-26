@@ -1,0 +1,31 @@
+/* Animações de entrada e microinterações */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Entrada do hero (CSS puro, sem depender do JS) */
+.hero-text > * { opacity: 0; animation: fadeUp .8s cubic-bezier(.2, .7, .2, 1) forwards; }
+.hero-text > :nth-child(1) { animation-delay: .1s; }
+.hero-text > :nth-child(2) { animation-delay: .2s; }
+.hero-text > :nth-child(3) { animation-delay: .32s; }
+.hero-text > :nth-child(4) { animation-delay: .42s; }
+.hero-text > :nth-child(5) { animation-delay: .52s; }
+.hero-text > :nth-child(6) { animation-delay: .62s; }
+.hero-visual { opacity: 0; animation: fadeUp .9s .35s cubic-bezier(.2, .7, .2, 1) forwards; }
+.code-card { animation: floaty 6s ease-in-out infinite; }
+
+/* Reveal ao rolar (a classe .js-ready só existe se o JS carregou, evitando conteúdo invisível) */
+.js-ready .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.js-ready .reveal.in-view { opacity: 1; transform: none; }
+.js-ready .reveal.in-view.card:hover,
+.js-ready .reveal.in-view.contact-card:hover { transform: translateY(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text > *, .hero-visual { opacity: 1; animation: none; }
+  .js-ready .reveal { opacity: 1; transform: none; }
+  .code-card { animation: none; }
+}
