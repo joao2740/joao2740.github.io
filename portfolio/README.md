@@ -1,70 +1,133 @@
 # Portfólio — João Vitor Lino Teixeira
 
-Portfólio pessoal de **João Vitor Lino Teixeira**, estudante de Ciências da Computação (UDF) e desenvolvedor em formação. Site estático, responsivo e pronto para o GitHub Pages.
+Portfólio pessoal de **João Vitor Lino Teixeira**, estudante de **Ciências da Computação na UDF – Centro Universitário** e desenvolvedor em formação.
 
-## Tecnologias
+O site apresenta minha trajetória acadêmica, formação técnica, habilidades, certificados e projetos realizados em estudos e aplicações profissionais.
+
+## Sobre o projeto
+
+Este portfólio é totalmente responsivo e foi desenvolvido exclusivamente com:
 
 - HTML5 semântico
-- CSS3 (variáveis, Grid, Flexbox, animações)
-- JavaScript puro (sem frameworks)
-- Fontes: Space Grotesk e JetBrains Mono (Google Fonts)
+- CSS3
+- JavaScript puro
+- Google Fonts
+- SVG para prévias visuais dos projetos
 
-## Estrutura de arquivos
+Não utiliza frameworks ou backend.
+
+## Conteúdo
+
+- Apresentação profissional
+- Ensino médio concluído no Colégio Ideal
+- Técnico em Desenvolvimento de Sistemas
+- Graduação em Ciências da Computação na UDF
+- Habilidades técnicas
+- Certificados da Cisco Networking Academy e SENAC DF
+- Projetos desenvolvidos
+- Contatos profissionais
+
+## Projetos
+
+### Sistema de Gerenciamento de Senhas Clínicas
+
+Aplicação em linguagem C para organizar o atendimento de pacientes por prioridade.
+
+**Tecnologias:** C, estruturas, funções e Make.
+
+**Repositório:** https://github.com/joao2740/-SISTEMA-DE-GERENCIAMENTO-DE-SENHAS-DE-ATENDIMENTO-CL-NICO
+
+### Trilha Clara
+
+Aplicação para orientar visitantes do Parque Ecológico de Águas Claras em acessibilidade, fauna, descarte de resíduos e segurança.
+
+**Tecnologias:** TypeScript, React, CSS, Vite e PWA.
+
+**Repositório:** https://github.com/joao2740/APP_TRILHA_CLARA
+
+### Acadêmico UDF
+
+Repositório com atividades acadêmicas de algoritmos, pensamento computacional e linguagem C.
+
+**Tecnologias:** C, HTML e Flowgorithm.
+
+**Repositório:** https://github.com/joao2740/Acad-mico_UDF
+
+### Carolina Pós-Operatório
+
+Site institucional para divulgação de serviços de pós-operatório, drenagem linfática e tratamento de fibroses.
+
+**Tecnologias:** HTML, CSS e JavaScript.
+
+**Site:** https://carolinaposoperatorio.com.br
+
+## Certificados
+
+A seção de certificados inclui:
+
+- Fundamentos de Suporte de TI
+- CSS Essentials
+- HTML Essentials
+- JavaScript Essentials 1
+- Linux Unhatched
+- Operating Systems Basics
+
+Os certificados são apresentados em cards com visualização ampliada.
+
+## Estrutura
 
 ```text
 portfolio/
 ├── index.html
+├── README.md
 ├── assets/
-│   ├── images/
-│   │   ├── profile/        # foto de perfil
-│   │   ├── projects/       # prévias dos projetos
-│   │   └── certificates/   # imagens dos certificados
-│   ├── certificates-pdf/   # PDFs originais dos certificados
-│   └── icons/              # favicon
+│   ├── certificates-pdf/
+│   ├── icons/
+│   └── images/
+│       ├── certificates/
+│       ├── profile/
+│       └── projects/
 ├── css/
-│   ├── style.css           # estilos base e componentes
-│   ├── responsive.css      # media queries
-│   └── animations.css      # animações
-├── js/
-│   ├── main.js             # certificados, modal, menu, rodapé
-│   ├── animations.js       # reveal, progresso, menu ativo
-│   └── projects.js         # dados e cards dos projetos
-└── README.md
+│   ├── style.css
+│   ├── responsive.css
+│   └── animations.css
+└── js/
+    ├── main.js
+    ├── animations.js
+    └── projects.js
 ```
-
-## Como personalizar
-
-- **Projetos:** edite o array `PROJECTS` em `js/projects.js`. Os três cards atuais são placeholders. Troque pelos dados reais dos seus repositórios (e mude `placeholder` para `false`). Coloque as imagens em `assets/images/projects/`.
-- **LinkedIn e e-mail:** em `index.html`, na seção Contato, troque o `href` dos cards marcados com `data-placeholder` (por exemplo `https://www.linkedin.com/in/seu-perfil` e `mailto:seu@email.com`) e remova o atributo `data-placeholder`. Atualize também o texto do card.
-- **Certificados:** edite o array `CERTIFICATES` em `js/main.js`. Só preencha `hours` se a carga horária constar no certificado.
 
 ## Executar localmente
 
-Basta abrir `index.html` no navegador. Se preferir um servidor local:
+Não é necessário instalar dependências.
+
+Abra o arquivo `index.html` no navegador ou execute:
 
 ```bash
-cd portfolio
 python3 -m http.server 8000
-# acesse http://localhost:8000
+```
+
+Depois acesse:
+
+```text
+http://localhost:8000
 ```
 
 ## Publicar no GitHub Pages
 
-1. **Criar o repositório:** no GitHub, clique em **New repository**. Para o endereço `https://joao2740.github.io`, nomeie-o `joao2740.github.io`. Com outro nome (ex.: `portfolio`), o endereço será `https://joao2740.github.io/portfolio/`. Deixe-o público.
-2. **Enviar os arquivos:** dentro da pasta do projeto, execute:
-   ```bash
-   git init
-   git add .
-   git commit -m "Primeira versão do portfólio"
-   git branch -M main
-   git remote add origin https://github.com/joao2740/NOME-DO-REPOSITORIO.git
-   git push -u origin main
-   ```
-   (Ou use **Add file → Upload files** no site do GitHub, enviando o conteúdo da pasta, com o `index.html` na raiz.)
-3. **Acessar Settings:** na página do repositório, clique em **Settings**.
-4. **Acessar Pages:** no menu lateral, clique em **Pages**.
-5. **Selecionar a branch principal:** em *Build and deployment → Source*, escolha **Deploy from a branch**; em *Branch*, selecione `main` e a pasta `/ (root)`.
-6. **Publicar o site:** clique em **Save** e aguarde de 1 a 3 minutos.
-7. **Acessar o link final:** volte a **Settings → Pages**. O endereço do portfólio aparece no topo da página.
+1. Crie um repositório público no GitHub.
+2. Para publicar diretamente em `https://joao2740.github.io`, nomeie o repositório como `joao2740.github.io`.
+3. Para publicar em uma subpasta, use outro nome, como `portfolio`.
+4. Envie todos os arquivos do projeto para a branch `main`.
+5. Acesse **Settings** no repositório.
+6. Entre em **Pages**.
+7. Em **Build and deployment**, selecione **Deploy from a branch**.
+8. Escolha a branch `main` e a pasta `/ (root)`.
+9. Clique em **Save**.
+10. Aguarde alguns minutos e acesse o endereço informado na página Pages.
 
-Todos os caminhos são relativos, então o site funciona tanto na raiz quanto em subpasta.
+## Contato
+
+- GitHub: https://github.com/joao2740
+- LinkedIn: https://www.linkedin.com/in/joão-vitor-lino-3266422b8
+- E-mail: jlino8722@gmail.com
